@@ -14,13 +14,13 @@
 	MAIN.prototype.Init = function Init(){
 		var _self = this;
 		
-		_self.PARAM.$ELE.scene1    = $('.section.scene1');
-		_self.PARAM.$ELE.Main      = $('#Main');
+		_self.PARAM.$ELE.scene1    = $('article section.scene1');
 
 		_self.PARAM.INT.window     = new Object();
 		_self.PARAM.INT.document   = new Object();
 
 		Main.Resize();
+		Main.MV();
 		$(window).resize(function(){Main.Resize();});
 		
 	};
@@ -40,7 +40,7 @@
 	 * ------------------------------------------------- */
 	MAIN.prototype.MV = function MV(){
 		var _self = this;
-		
+
 	};
 	window.MAIN = MAIN;
 })(window, document);
