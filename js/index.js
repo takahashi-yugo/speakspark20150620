@@ -40,7 +40,19 @@
 	 * ------------------------------------------------- */
 	MAIN.prototype.MV = function MV(){
 		var _self = this;
+		var count = 0;
+		var total = 3;
+		var target = $('.scene1 ul');
 
+		setInterval(function(){
+			target.find('li').eq(count).animate({'opacity':0,'z-index':1},200,'linear');
+			if(count == total){
+				count = 1;
+			}else{
+				count++;
+			}
+			target.find('li').eq(count).animate({'opacity':1,'z-index':10},200,'linear');
+		},1000);
 	};
 	window.MAIN = MAIN;
 })(window, document);
