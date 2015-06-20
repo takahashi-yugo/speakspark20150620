@@ -122,7 +122,7 @@ body {
   width: 100%;
   height: 500px;
   text-align: center;
-  background: red url(../img/scene1_bg.png) no-repeat left center;
+  background: url(../img/pattern1.svg) no-repeat left center;
   position: relative;
 }
 .scene1 img[class^=works] {
@@ -233,7 +233,7 @@ body {
 .scene1{
   width: 100%;
   position: relative;
-  background: #000;
+  background: #fff;
 }
 .scene1 .bg1,
 .scene1 .bg2,
@@ -248,16 +248,16 @@ body {
 }
 
 .scene1 .bg1{
-  background:#000;
+  background: url(../img/pattern4.svg) 0 0 no-repeat;
 }
 .scene1 .bg2{
-  background:#444;
+  background: url(../img/pattern2.svg) 0 0 no-repeat;
 }
 .scene1 .bg3{
-  background:#999;
+  background: url(../img/pattern3.svg) 0 0 no-repeat;
 }
 .scene1 .bg4{
-  background:#fff;
+  background: url(../img/pattern1.svg) 0 0 no-repeat;
 }
 
 .scene1 .bg1{
@@ -272,7 +272,8 @@ body {
   top:50%;
   left:50%;
   margin: -106px 0 0 -69px;
-  opacity: 0.1;  
+  opacity: 0.2;
+  z-index: 80;
 }
 .scene1 #main_message1{
   text-align: center;

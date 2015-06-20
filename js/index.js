@@ -34,6 +34,8 @@
 		_self.PARAM.INT.window.height = $(window).height();
 		_self.PARAM.INT.document.width  = $(document).width();
 		_self.PARAM.INT.document.height = $(document).height();
+
+		//$('.scene1').height(_self.PARAM.INT.window.height)
 	};
 	/* ----------------------------------------------------
 	 * MV
@@ -45,14 +47,31 @@
 		var target = $('.scene1 ul');
 
 		setInterval(function(){
-			target.find('li').eq(count).animate({'opacity':0,'z-index':1},200,'linear');
+			target.find('li').eq(count).animate({'opacity':0},500,'linear',function(){
+				$(this).css({'z-index':1});
+			});
 			if(count == total){
-				count = 1;
+				count = 0;
 			}else{
 				count++;
 			}
-			target.find('li').eq(count).animate({'opacity':1,'z-index':10},200,'linear');
-		},1000);
+			target.find('li').eq(count).animate({'opacity':1,'z-index':10},500,'linear',function(){
+				$(this).css({'z-index':5});
+			});
+		},2000);
+
+
+		
+			
+
+		
+
+		$('.scene1').click(function(){
+			$('#main_message1').fadeOut();
+			setTimeout(function(){
+				$('#main_message2').fadeIn();
+			},1000);
+		});
 	};
 	window.MAIN = MAIN;
 })(window, document);
