@@ -41,6 +41,20 @@
 	MAIN.prototype.MV = function MV(){
 		var _self = this;
 
+        MAIN.prototype.pattern_count = 1;
+        setInterval(function(){
+            if (MAIN.prototype.pattern_count >= 5){
+                MAIN.prototype.pattern_count = 1;
+            }
+            $('.bg' + MAIN.prototype.pattern_count).css("z-index","10");
+            $('.bg' + (MAIN.prototype.pattern_count + 1)).css("z-index","");
+            $('.bg' + MAIN.prototype.pattern_count ).('slow', 0.3, function()
+            {
+                $(this).css('background-image', 'url(./img/pattern' + MAIN.prototype.pattern_count + '.svg)');
+            }).fadeTo('slow', 1);
+            MAIN.prototype.pattern_count++;
+        },3000);
+
 	};
 	window.MAIN = MAIN;
 })(window, document);
